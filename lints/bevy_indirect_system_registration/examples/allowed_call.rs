@@ -13,7 +13,10 @@ fn configurations() -> ScheduleConfigs<ScheduleSystem> {
 struct GamePlugin;
 impl Plugin for GamePlugin {
     fn build(&self, app: &mut App) {
-        #[cfg_attr(dylint_lib = "mydylint", allow(bevy_indirect_system_registration))]
+        #[cfg_attr(
+            dylint_lib = "bevy_indirect_system_registration",
+            allow(bevy_indirect_system_registration)
+        )]
         app.add_systems(Update, configurations());
     }
 }

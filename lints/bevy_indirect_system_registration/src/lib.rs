@@ -1,3 +1,11 @@
+#![feature(rustc_private)]
+
+extern crate rustc_errors;
+extern crate rustc_hir;
+extern crate rustc_lint;
+extern crate rustc_middle;
+extern crate rustc_session;
+
 use rustc_errors::DiagDecorator;
 use rustc_hir::{Expr, ExprKind, def_id::DefId};
 use rustc_lint::{LateContext, LateLintPass, LintContext};
@@ -13,6 +21,14 @@ rustc_session::declare_lint! {
 }
 
 rustc_session::declare_lint_pass!(BevyIndirectSystemRegistration => [BEVY_INDIRECT_SYSTEM_REGISTRATION]);
+
+dylint_linting::dylint_library!();
+
+#[unsafe(no_mangle)]
+pub fn register_lints(_: &rustc_session::Session, store: &mut rustc_lint::LintStore) {
+    store.register_lints(&[BEVY_INDIRECT_SYSTEM_REGISTRATION]);
+    store.register_late_lint_pass(Box::new(|_| Box::new(BevyIndirectSystemRegistration)));
+}
 
 impl<'tcx> LateLintPass<'tcx> for BevyIndirectSystemRegistration {
     fn check_expr(&mut self, cx: &LateContext<'tcx>, expr: &'tcx Expr<'tcx>) {
