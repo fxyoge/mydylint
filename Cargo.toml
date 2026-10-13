@@ -1,0 +1,24 @@
+[package]
+name = "mydylint"
+version = "0.1.0"
+edition = "2024"
+publish = false
+description = "Portable personal Rust lints"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+dylint_linting = "=6.1.1"
+
+[dev-dependencies]
+dylint_testing = "=6.1.1"
+bevy_app = { version = "=0.19.1", default-features = false }
+bevy_ecs = { version = "=0.19.1", default-features = false }
+
+[package.metadata.rust-analyzer]
+rustc_private = true
+
+[lints.rust.unexpected_cfgs]
+level = "warn"
+check-cfg = ['cfg(dylint_lib, values("mydylint"))']
