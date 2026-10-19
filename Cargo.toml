@@ -16,4 +16,4 @@ bevy_input = { version = "=0.19.1", default-features = false, features = ["std",
 
 [workspace.lints.rust.unexpected_cfgs]
 level = "warn"
-check-cfg = ['cfg(dylint_lib, values("bevy_indirect_system_registration", "bevy_enforce_bevy_enhanced_input"))']
+check-cfg = ['cfg(dylint_lib, values("bevy_indirect_system_registration", "bevy_enforce_bevy_enhanced_input", "bevy_state_tree_private_access"))']
