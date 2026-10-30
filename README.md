@@ -7,7 +7,7 @@ A portable collection of personal Rust lints, loaded by [Dylint](https://github.
 ```toml
 [workspace.metadata.dylint]
 libraries = [
-    { git = "ssh://git@github.com/fxyoge/mydylint.git", rev = "<sha>", pattern = "lints/*" },
+    { git = "https://github.com/fxyoge/mydylint.git", rev = "<tag>", pattern = "lints/*" },
 ]
 ```
 
