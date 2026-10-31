@@ -1240,6 +1240,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "discarded_projection_work"
+version = "0.1.0"
+dependencies = [
+ "bevy_ecs 0.19.1",
+ "dylint_linting",
+ "dylint_testing",
+]
+
+[[package]]
 name = "dispatch2"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
