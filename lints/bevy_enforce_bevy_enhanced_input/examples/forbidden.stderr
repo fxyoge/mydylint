@@ -39,14 +39,6 @@ LL |     Gamepad, GamepadAxisChangedEvent, GamepadButtonChangedEvent, GamepadBut
    |
    = help: use `bevy_enhanced_input` instead
 
-warning: raw Bevy input API `GamepadConnectionEvent` is forbidden in production source
-  --> $DIR/forbidden.rs:5:5
-   |
-LL |     GamepadConnectionEvent, GamepadEvent, RawGamepadAxisChangedEvent, RawGamepadButtonChangedEvent,
-   |     ^^^^^^^^^^^^^^^^^^^^^^
-   |
-   = help: use `bevy_enhanced_input` instead
-
 warning: raw Bevy input API `GamepadEvent` is forbidden in production source
   --> $DIR/forbidden.rs:5:29
    |
@@ -127,5 +119,5 @@ LL |     AccumulatedMouseMotion, AccumulatedMouseScroll, MouseButtonInput, Mouse
    |
    = help: use `bevy_enhanced_input` instead
 
-warning: 16 warnings emitted
+warning: 15 warnings emitted
 
