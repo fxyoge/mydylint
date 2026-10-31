@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-use state_tree::{StateTreeDomain, StateTreeInstance};
+use state_tree::StateTreeInstance;
 
 mod directory {
     include!(concat!(
@@ -26,7 +26,7 @@ mod suffix {
     ));
 }
 
-fn example<D: StateTreeDomain>(tree: &StateTreeInstance<D>) {
+fn example(tree: &StateTreeInstance) {
     let _ = tree.active_states();
 }
 

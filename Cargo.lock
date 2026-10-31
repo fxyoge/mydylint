@@ -517,7 +517,7 @@ dependencies = [
 [[package]]
 name = "bevy_luau"
 version = "0.1.0"
-source = "git+ssh://git@github.com/fxyoge/bevy_luau.git?rev=94793a405eaa1d10daeba0a0938f03c52b0b00d9#94793a405eaa1d10daeba0a0938f03c52b0b00d9"
+source = "git+https://github.com/fxyoge/bevy_luau.git?rev=2dfe744ae7db7ac242db7890064e41c841815633#2dfe744ae7db7ac242db7890064e41c841815633"
 dependencies = [
  "full_moon",
  "mlua",
@@ -605,7 +605,7 @@ dependencies = [
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-time",
- "windows-sys 0.59.0",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -706,7 +706,7 @@ dependencies = [
 [[package]]
 name = "bevy_state_tree"
 version = "0.1.0"
-source = "git+ssh://git@github.com/fxyoge/bevy_state_tree.git?rev=6bdf8319065c7394ebe9bdfcbc7681c74f8079f5#6bdf8319065c7394ebe9bdfcbc7681c74f8079f5"
+source = "git+https://github.com/fxyoge/bevy_state_tree.git?rev=v0.1.0#85e86aab6edc4bf21646b4ed50f7a381568a979e"
 dependencies = [
  "bevy_app 0.20.0",
  "bevy_asset",
@@ -725,7 +725,7 @@ dependencies = [
 [[package]]
 name = "bevy_state_tree_macros"
 version = "0.1.0"
-source = "git+ssh://git@github.com/fxyoge/bevy_state_tree.git?rev=6bdf8319065c7394ebe9bdfcbc7681c74f8079f5#6bdf8319065c7394ebe9bdfcbc7681c74f8079f5"
+source = "git+https://github.com/fxyoge/bevy_state_tree.git?rev=v0.1.0#85e86aab6edc4bf21646b4ed50f7a381568a979e"
 dependencies = [
  "proc-macro-crate",
  "proc-macro2",
@@ -1255,9 +1255,9 @@ checksum = "117240f60069e65410b3ae1bb213295bd828f707b5bec6596a1afc8793ce0cbc"
 
 [[package]]
 name = "dylint"
-version = "6.1.1"
+version = "6.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d816dfae573cce757412edf51a2a4078c099e65a30ddca04eeb8dbe6ffae5c17"
+checksum = "f860d94af1dd52e932fdaac5351eeb1946cee466616331d5d3f5f570646cbe05"
 dependencies = [
  "anstyle",
  "anyhow",
@@ -1273,9 +1273,9 @@ dependencies = [
 
 [[package]]
 name = "dylint_internal"
-version = "6.1.1"
+version = "6.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "41be9f3e60a9d9e75b409249d7661708721c860694dc6931ba2d0b6064f667fd"
+checksum = "0b7cba7031cd44bdc56bde25a451015911a7aacad72cfc0e476003bec091f3ac"
 dependencies = [
  "anstyle",
  "anyhow",
@@ -1284,6 +1284,7 @@ dependencies = [
  "git2",
  "home",
  "log",
+ "pastey",
  "regex",
  "semver",
  "serde",
@@ -1297,9 +1298,9 @@ dependencies = [
 
 [[package]]
 name = "dylint_linting"
-version = "6.1.1"
+version = "6.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ad79092ab934678503d5b5e2ec64fcaa54dede767497adcd93feff58fa8ef190"
+checksum = "75bb21fcfeb6cf699039c95e2c23fd3dd9c1fce7f487f2025920a822573ac389"
 dependencies = [
  "cargo_metadata",
  "dylint_internal",
@@ -1312,9 +1313,9 @@ dependencies = [
 
 [[package]]
 name = "dylint_testing"
-version = "6.1.1"
+version = "6.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "44d268e66a9c5ce135d0a006d1593c369e6aed09cb10a977f8f60dc98a32e75f"
+checksum = "b5be664837ffe83f16823c9c4646fc7428fa1067cb21f435eb2214fd2bffc8dd"
 dependencies = [
  "anyhow",
  "cargo_metadata",
@@ -2134,6 +2135,12 @@ name = "paste"
 version = "1.0.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "57c0d7b74b563b49d38dae00a0c37d4d6de9b432382b2892f0574ddcae73fd0a"
+
+[[package]]
+name = "pastey"
+version = "0.2.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2ee67f1008b1ba2321834326597b8e186293b049a023cdef258527550b9935b4"
 
 [[package]]
 name = "pin-project-lite"
@@ -3029,7 +3036,7 @@ version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22"
 dependencies = [
- "windows-sys 0.59.0",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]

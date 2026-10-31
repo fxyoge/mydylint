@@ -8,18 +8,12 @@ edition = "2024"
 publish = false
 
 [workspace.dependencies]
-dylint_linting = "6.1.1"
-dylint_testing = "6.1.1"
+dylint_linting = "6.3.2"
+dylint_testing = "6.3.2"
 bevy_app = { version = "0.19.1", default-features = false }
 bevy_ecs = { version = "0.19.1", default-features = false }
 bevy_input = { version = "0.19.1", default-features = false, features = ["std", "keyboard", "mouse", "gamepad"] }
 
 [workspace.lints.rust.unexpected_cfgs]
 level = "warn"
-check-cfg = ["""
-    cfg(dylint_lib, values(
-        "bevy_indirect_system_registration",
-        "bevy_enforce_bevy_enhanced_input",
-        "bevy_state_tree_private_access"
-    ))
-"""]
+check-cfg = ['cfg(dylint_lib, values(any()))']

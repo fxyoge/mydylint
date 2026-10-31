@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-use state_tree::{StateTreeDomain, StateTreeInstance};
+use state_tree::StateTreeInstance;
 
 macro_rules! framework {
     ($tree:expr) => {
@@ -19,7 +19,7 @@ macro_rules! caller_method {
     };
 }
 
-fn example<D: StateTreeDomain>(tree: &StateTreeInstance<D>) {
+fn example(tree: &StateTreeInstance) {
     let _ = framework!(tree);
     let _ = caller_expression!(tree.data("placing"));
     let _ = caller_expression!(StateTreeInstance::data(tree, "placing"));

@@ -1,19 +1,17 @@
 #![allow(dead_code)]
 #![deny(unfulfilled_lint_expectations)]
-use state_tree::{
-    StateTreeArgs, StateTreeContext, StateTreeDomain, StateTreeEvent, StateTreeInstance,
-};
+use state_tree::{StateTreeArgs, StateTreeContext, StateTreeEvent, StateTreeInstance};
 
-fn integration<D: StateTreeDomain, E: StateTreeEvent<D>>(
-    tree: &StateTreeInstance<D>,
-    context: StateTreeContext<'_, D>,
+fn integration<E: StateTreeEvent>(
+    tree: &StateTreeInstance,
+    context: StateTreeContext<'_>,
     args: &mut StateTreeArgs,
 ) {
     let _ = tree.status();
     let _ = tree.definition();
     let _ = tree.definition_id();
-    let _ = StateTreeInstance::<D>::new(Default::default());
-    let _ = StateTreeInstance::<D>::new_with_initial_data(Default::default(), Default::default());
+    let _ = StateTreeInstance::new(Default::default());
+    let _ = StateTreeInstance::new_with_initial_data(Default::default(), Default::default());
     let _ = context.entity();
     let _ = context.event_name();
     let _ = context.external_event();
@@ -27,7 +25,7 @@ fn integration<D: StateTreeDomain, E: StateTreeEvent<D>>(
     dylint_lib = "bevy_state_tree_private_access",
     allow(bevy_state_tree_private_access, reason = "generic binding adapter")
 )]
-fn adapter<D: StateTreeDomain>(tree: &StateTreeInstance<D>) {
+fn adapter(tree: &StateTreeInstance) {
     let _ = tree.data("placing");
     let _ = tree.active_state_names();
 }
@@ -36,11 +34,11 @@ fn adapter<D: StateTreeDomain>(tree: &StateTreeInstance<D>) {
     dylint_lib = "bevy_state_tree_private_access",
     expect(bevy_state_tree_private_access, reason = "intentional inspection")
 )]
-fn expected<D: StateTreeDomain>(context: StateTreeContext<'_, D>) {
+fn expected(context: StateTreeContext<'_>) {
     let _ = context.data("placing");
 }
 
-fn expression_allow<D: StateTreeDomain>(tree: &StateTreeInstance<D>) {
+fn expression_allow(tree: &StateTreeInstance) {
     #[cfg_attr(
         dylint_lib = "bevy_state_tree_private_access",
         allow(bevy_state_tree_private_access)
