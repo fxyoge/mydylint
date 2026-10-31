@@ -1,5 +1,5 @@
-use state_tree::{StateTreeDomain, StateTreeInstance};
+use state_tree::StateTreeInstance;
 
-fn inspect<D: StateTreeDomain>(tree: &StateTreeInstance<D>) {
+fn inspect(tree: &StateTreeInstance) {
     let _ = tree.data("placing");
 }

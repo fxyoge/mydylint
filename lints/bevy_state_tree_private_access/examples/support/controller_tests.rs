@@ -1,5 +1,5 @@
-use state_tree::{StateTreeContext, StateTreeDomain};
+use state_tree::StateTreeContext;
 
-fn inspect<D: StateTreeDomain>(context: StateTreeContext<'_, D>) {
+fn inspect(context: StateTreeContext<'_>) {
     let _ = context.data("placing");
 }

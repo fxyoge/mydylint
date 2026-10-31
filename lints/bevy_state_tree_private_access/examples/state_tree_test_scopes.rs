@@ -1,10 +1,10 @@
 #![allow(dead_code)]
-use state_tree::{StateTreeDomain, StateTreeInstance};
+use state_tree::StateTreeInstance;
 
 #[cfg(test)]
 mod white_box {
     use super::*;
-    fn helper<D: StateTreeDomain>(tree: &StateTreeInstance<D>) {
+    fn helper(tree: &StateTreeInstance) {
         let _ = tree.data("placing");
         let _ = tree.active_states();
         let _ = tree.active_state_names();
@@ -20,7 +20,7 @@ mod white_box {
 
 #[test]
 fn white_box_function() {
-    fn helper<D: StateTreeDomain>(tree: &StateTreeInstance<D>) {
+    fn helper(tree: &StateTreeInstance) {
         let _ = tree.data("placing");
     }
 }
@@ -34,7 +34,7 @@ mod external_white_box {
 }
 
 // Production source must still warn under --test, even inside closures/helpers.
-fn production<D: StateTreeDomain>(tree: &StateTreeInstance<D>) {
+fn production(tree: &StateTreeInstance) {
     let _ = tree.data("placing");
     let _ = || tree.active_states();
 }

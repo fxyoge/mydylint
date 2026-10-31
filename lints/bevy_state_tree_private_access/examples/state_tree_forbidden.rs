@@ -1,35 +1,34 @@
 #![allow(dead_code)]
 use state_tree::{
-    StateTreeActivityContext, StateTreeContext, StateTreeDomain, StateTreeEffectContext,
-    StateTreeInstance,
+    StateTreeActivityContext, StateTreeContext, StateTreeEffectContext, StateTreeInstance,
 };
 
-fn instance<D: StateTreeDomain>(tree: &StateTreeInstance<D>, key: &str) {
+fn instance(tree: &StateTreeInstance, key: &str) {
     let _ = tree.data("placing");
     let _ = tree.data(key);
     let _ = tree.active_states();
     let _ = tree.active_state_names();
 }
 
-fn context<D: StateTreeDomain>(context: StateTreeContext<'_, D>) {
+fn context(context: StateTreeContext<'_>) {
     let _ = context.data("placing");
 }
 
-fn effect<D: StateTreeDomain>(context: StateTreeEffectContext<'_, D>) {
+fn effect(context: StateTreeEffectContext<'_>) {
     let _ = context.data("placing");
 }
 
-fn activity<D: StateTreeDomain>(context: StateTreeActivityContext<'_, D>) {
+fn activity(context: StateTreeActivityContext<'_>) {
     let _ = context.data("placing");
 }
 
-fn query<D: StateTreeDomain>(instances: ecs::prelude::Query<&StateTreeInstance<D>>) {
+fn query(instances: ecs::prelude::Query<&StateTreeInstance>) {
     for tree in &instances {
         let _ = tree.data("placing");
     }
 }
 
-fn change_detection<D: StateTreeDomain>(tree: ecs::change_detection::Ref<StateTreeInstance<D>>) {
+fn change_detection(tree: ecs::change_detection::Ref<StateTreeInstance>) {
     let _ = tree.active_state_names();
 }
 
