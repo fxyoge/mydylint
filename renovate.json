@@ -16,6 +16,9 @@
   "automerge": true,
   "platformAutomerge": false,
   "packageRules": [{
+    "matchPackageNames": ["rust"],
+    "extends": ["schedule:weekly"]
+  }, {
     "matchPackageNames": ["/bevy_.+$/"],
     "groupName": "Bevy"
   }, {
