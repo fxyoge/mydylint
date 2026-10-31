@@ -1,0 +1,57 @@
+error: effects `arcade.retry` and `arcade.start` already select the operations redispatched here
+  --> $DIR/enum_conditions.rs:24:12
+   |
+LL |         if let Command::Retry { seed } = command {
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: this effect fixes one discriminator value
+  --> $DIR/enum_conditions.rs:15:17
+   |
+LL |         .effect("arcade.retry", |_, args| {
+   |                 ^^^^^^^^^^^^^^
+note: this effect fixes a different discriminator value
+  --> $DIR/enum_conditions.rs:14:17
+   |
+LL |         .effect("arcade.start", |_, _| Ok(Command::Start))
+   |                 ^^^^^^^^^^^^^^
+   = help: give each operation its own message type and consume it with `MessageReader<T>`
+   = note: `#[deny(bevy_state_tree_redundant_effect_forwarding)]` on by default
+
+error: effects `arcade.start` and `arcade.retry` already select the operations redispatched here
+  --> $DIR/enum_conditions.rs:27:12
+   |
+LL |         if *command == Command::Start {
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: this effect fixes one discriminator value
+  --> $DIR/enum_conditions.rs:14:17
+   |
+LL |         .effect("arcade.start", |_, _| Ok(Command::Start))
+   |                 ^^^^^^^^^^^^^^
+note: this effect fixes a different discriminator value
+  --> $DIR/enum_conditions.rs:15:17
+   |
+LL |         .effect("arcade.retry", |_, args| {
+   |                 ^^^^^^^^^^^^^^
+   = help: give each operation its own message type and consume it with `MessageReader<T>`
+
+error: effects `arcade.start` and `arcade.retry` already select the operations redispatched here
+  --> $DIR/enum_conditions.rs:30:12
+   |
+LL |         if Command::Start != *command {
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: this effect fixes one discriminator value
+  --> $DIR/enum_conditions.rs:14:17
+   |
+LL |         .effect("arcade.start", |_, _| Ok(Command::Start))
+   |                 ^^^^^^^^^^^^^^
+note: this effect fixes a different discriminator value
+  --> $DIR/enum_conditions.rs:15:17
+   |
+LL |         .effect("arcade.retry", |_, args| {
+   |                 ^^^^^^^^^^^^^^
+   = help: give each operation its own message type and consume it with `MessageReader<T>`
+
+error: aborting due to 3 previous errors
+

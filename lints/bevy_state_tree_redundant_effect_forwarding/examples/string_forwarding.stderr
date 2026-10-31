@@ -1,0 +1,25 @@
+error: effects `game.confirm` and `game.back` already select the operations redispatched here
+  --> $DIR/string_forwarding.rs:28:9
+   |
+LL | /         match action {
+LL | |             "confirm" => {}
+LL | |             "back" => {}
+LL | |             _ => {}
+LL | |         }
+   | |_________^
+   |
+note: this effect fixes one discriminator value
+  --> $DIR/string_forwarding.rs:13:17
+   |
+LL |         .effect("game.confirm", |_, _| {
+   |                 ^^^^^^^^^^^^^^
+note: this effect fixes a different discriminator value
+  --> $DIR/string_forwarding.rs:18:17
+   |
+LL |         .effect("game.back", |_, _| {
+   |                 ^^^^^^^^^^^
+   = help: give each operation its own message type and consume it with `MessageReader<T>`
+   = note: `#[deny(bevy_state_tree_redundant_effect_forwarding)]` on by default
+
+error: aborting due to 1 previous error
+

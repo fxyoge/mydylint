@@ -744,6 +744,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "bevy_state_tree_redundant_effect_forwarding"
+version = "0.1.0"
+dependencies = [
+ "bevy_ecs 0.20.0",
+ "bevy_state_tree",
+ "dylint_linting",
+ "dylint_testing",
+]
+
+[[package]]
 name = "bevy_tasks"
 version = "0.19.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"

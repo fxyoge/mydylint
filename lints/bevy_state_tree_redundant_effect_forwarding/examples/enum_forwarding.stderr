@@ -1,0 +1,24 @@
+error: effects `arcade.start` and `arcade.pause` already select the operations redispatched here
+  --> $DIR/enum_forwarding.rs:14:9
+   |
+LL | /         match command {
+LL | |             Command::Start => {}
+LL | |             Command::Pause => {}
+LL | |         }
+   | |_________^
+   |
+note: this effect fixes one discriminator value
+  --> $DIR/enum_forwarding.rs:23:17
+   |
+LL |         .effect("arcade.start", |_, _| Ok(Command::Start))
+   |                 ^^^^^^^^^^^^^^
+note: this effect fixes a different discriminator value
+  --> $DIR/enum_forwarding.rs:24:17
+   |
+LL |         .effect("arcade.pause", |_, _| Ok(Command::Pause));
+   |                 ^^^^^^^^^^^^^^
+   = help: give each operation its own message type and consume it with `MessageReader<T>`
+   = note: `#[deny(bevy_state_tree_redundant_effect_forwarding)]` on by default
+
+error: aborting due to 1 previous error
+
