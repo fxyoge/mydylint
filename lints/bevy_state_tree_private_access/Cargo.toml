@@ -15,7 +15,7 @@ dylint_linting.workspace = true
 dylint_testing.workspace = true
 ecs = { package = "bevy_ecs", version = "0.20.0", default-features = false }
 # Rename the real dependency so every fixture also exercises crate renaming.
-state_tree = { package = "bevy_state_tree", git = "https://github.com/fxyoge/bevy_state_tree.git", rev = "v0.1.0" }
+state_tree = { package = "bevy_state_tree", git = "https://github.com/fxyoge/bevy_state_tree.git", tag = "v0.1.0" }
 
 [lints]
 workspace = true
