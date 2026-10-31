@@ -706,7 +706,7 @@ dependencies = [
 [[package]]
 name = "bevy_state_tree"
 version = "0.1.0"
-source = "git+https://github.com/fxyoge/bevy_state_tree.git?rev=v0.1.0#85e86aab6edc4bf21646b4ed50f7a381568a979e"
+source = "git+https://github.com/fxyoge/bevy_state_tree.git?tag=v0.1.0#85e86aab6edc4bf21646b4ed50f7a381568a979e"
 dependencies = [
  "bevy_app 0.20.0",
  "bevy_asset",
@@ -725,7 +725,7 @@ dependencies = [
 [[package]]
 name = "bevy_state_tree_macros"
 version = "0.1.0"
-source = "git+https://github.com/fxyoge/bevy_state_tree.git?rev=v0.1.0#85e86aab6edc4bf21646b4ed50f7a381568a979e"
+source = "git+https://github.com/fxyoge/bevy_state_tree.git?tag=v0.1.0#85e86aab6edc4bf21646b4ed50f7a381568a979e"
 dependencies = [
  "proc-macro-crate",
  "proc-macro2",
