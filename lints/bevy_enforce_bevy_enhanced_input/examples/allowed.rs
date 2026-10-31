@@ -1,4 +1,5 @@
 #![allow(dead_code, unused_imports)]
+use bevy_input::gamepad::GamepadConnectionEvent;
 use bevy_input::gamepad::{GamepadAxis, GamepadButton};
 use bevy_input::keyboard::KeyCode;
 use bevy_input::mouse::MouseButton;
@@ -9,6 +10,9 @@ mod model {
     pub struct Gamepad;
 }
 fn bindings(_: KeyCode, _: MouseButton, _: GamepadAxis, _: GamepadButton) {}
+fn disconnected(event: GamepadConnectionEvent) -> bool {
+    event.disconnected()
+}
 fn local(_: Gamepad, _: ButtonInput, _: model::MouseMotion, _: model::Gamepad) {}
 mod shadow {
     struct Gamepad;

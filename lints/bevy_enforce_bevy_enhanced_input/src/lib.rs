@@ -154,7 +154,6 @@ fn is_forbidden(cx: &LateContext<'_>, id: DefId) -> bool {
         "Gamepad"
         | "GamepadEvent"
         | "RawGamepadEvent"
-        | "GamepadConnectionEvent"
         | "GamepadButtonStateChangedEvent"
         | "GamepadButtonChangedEvent"
         | "GamepadAxisChangedEvent"
